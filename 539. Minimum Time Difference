@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int findMinDifference(vector<string>& timePoints) {
+        vector<int> times;
+        for(auto &a : timePoints){
+            times.push_back(stringTimeToInt(a));
+        }
+        sort(times.begin(), times.end());
+        int res = INT_MAX;
+        for(int i = 1; i < times.size(); i++){
+            res = min(res, times[i]-times[i-1]);
+        }
+        res = min(times[0]+1440-times.back(), res);
+        return res;
+    }
+    
+    
+    
+    int stringTimeToInt(string &s){
+        return (s[4]-'0')+(s[3]-'0')*10+(s[1]-'0')*60+(s[0]-'0')*600;
+    }
+};
