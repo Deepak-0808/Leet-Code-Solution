@@ -1,0 +1,9 @@
+class Solution {
+public:
+    int percentageLetter(string s, char letter) {
+       
+        int count1=count(s.begin(), s.end(), letter); 
+        int ans=count1*100/s.length();
+        return ans;
+    }
+};
