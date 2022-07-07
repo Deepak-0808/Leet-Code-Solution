@@ -12,6 +12,8 @@ public:
                 if( strs[str][chr] != strs[str-1][chr] ) 
                     return strs[0].substr(0, chr); 
             }
+            
+            
         } 
         return strs[0];
     }
